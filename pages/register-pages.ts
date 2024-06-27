@@ -4,22 +4,29 @@ import {page} from "../steps/worlds";
 
 
 class RegisterPage {
-  readonly signBtn: Locator;
+  readonly profilIcon: Locator;
+  readonly registerButton: Locator;
   readonly password: Locator;
+  readonly confPassword: Locator;
   readonly email: Locator;
-  readonly fName: Locator;
-  readonly lName: Locator;
-  readonly contBtn: Locator;
+  readonly profilPlaceholder : Locator;
+  readonly registerSection: Locator;
 
   constructor(page: Page) {
-    this.signBtn = page.getByRole('button', { name: 'Log in' });
-    this.password = page.getByLabel('Password');
-    this.email = page.locator('#modalusername');
-    this.signBtn = page.getByRole('button', { name: 'Sign up for free' });
-    this.fName = page.getByPlaceholder('Add your first name');
-    this.lName = page.getByPlaceholder('Add your last name');
-    this.contBtn = page.getByRole('button', { name: 'Continue', exact: true });
+    this.profilIcon = page.locator('#style_avatar_wrapper__pEGIQ span');
+    this.password = page.getByPlaceholder('Mot de passe', { exact: true });
+    this.email = page.getByPlaceholder('Email');
+    this.registerSection = page.getByRole('tab', { name: 'Inscription' });
+    this.confPassword = page.getByPlaceholder('Confirmer votre mot de passe');
+    this.registerButton = page.getByRole('button', { name: 'Inscription' });
+    this.profilPlaceholder = page.locator('#style_avatar_wrapper__pEGIQ');
   }
+
+  async gotoRegisterSection(){
+    await this.profilIcon.nth(1).click();
+    await this.registerSection.click();
+  }
+
 
   async fillEmail(email: string) {
     await this.email.fill(email);
@@ -27,22 +34,33 @@ class RegisterPage {
 
   async fillPassword(password: string) {
     await this.password.fill(password);
-  }
-  async fillFName(fName: string){
-    await this.fName.fill(fName);
-  }
-  async fillLName(lName: string){
-    await this.lName.fill(lName);
-  }
-  async clickOnContBtn(){
-    await this.contBtn.click();
+
   }
 
-  async clickOnSignBtn(){
-    await this.signBtn.click();
+  async fillConfPassword(confPass: string) {
+   await this.confPassword.fill(confPass);
   }
 
- 
+  async clickOnRegisterBtn(){
+    await this.registerButton.click();
+  }
+
+  async singnUp(email: string, pass: string){
+    await this.fillEmail(email);
+    await this.fillPassword(pass);
+    await this.fillConfPassword(pass);
+    await this.clickOnRegisterBtn();
+  }
+  async singnWithFalsePass(email: string, pass: string, confPass: string){
+    await this.fillEmail(email);
+    await this.fillPassword(pass);
+    await this.fillConfPassword(confPass);
+    await this.clickOnRegisterBtn();
+  }
+
+  async checkRegister(email: string){
+    await expect(this.profilPlaceholder).toContainText(email);
+  }
 
 }
 

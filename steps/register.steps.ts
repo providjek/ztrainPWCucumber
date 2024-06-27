@@ -1,24 +1,45 @@
 import { Given, When, Then, setDefaultTimeout } from "@cucumber/cucumber";
 import {expect, test} from "@playwright/test";
 import {page} from "./worlds";
-import LoginPage from "../pages/login-pages";
 import configUrl from "../configParams/configUrl";
-import { switchLogAndSingPage } from "../utils/navigation-utils";
 import RegisterPage from "../pages/register-pages";
  
 let registerPage: RegisterPage;
 
-When('I fill in my valid information', async function (registerInfo) {
-    
+Given('I am on the registration section', async function () {
+    registerPage =  new RegisterPage(page);
+    await registerPage.gotoRegisterSection();
+ });
+
+When('I fill in my {string} and {string} details', async function (email, pass) {
+ 
+    await registerPage.singnUp(email, pass);
 });
 
-When('I confirm my registration with the link received by email from {string} to {string}', function (string, string2) {
-  
+Then('I am registered and logged in with my address {string}', async function (email) {
+ 
+   await registerPage.checkRegister(email);
 });
 
-Then('My account should be activated', function () {
+////////////////////////////2////////////////////////////////////////////////////////
+
+When('I fill in my false {string} {string}  and {string} details', async function (email, pass, confPass) {
+   
+    await registerPage.singnWithFalsePass(email, pass, confPass);
+
 });
 
+Then('Registration fails and I receive the message {string}', async function (erroMsg) {
+    await expect(page.getByLabel('Inscription').getByRole('paragraph')).toContainText(erroMsg);
 
-Then('I should be redirected to the home page', function () {
+});
+
+//////////////////3///////////////////////////////////////////////////
+
+When('I register with my google account', function () {
+ 
+});
+
+Then('I register with my google account', function () {
+ 
 });

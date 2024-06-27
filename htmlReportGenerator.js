@@ -8,10 +8,11 @@ var options = {
     theme: 'bootstrap',
     jsonFile: './Reports/cucumber_report.json',
     output: './Reports/cucumber_report_'+ currentDate +'.html',
-    screenshotsDirectory: './Screenshots/',
+    screenshotsDirectory: './Reports/Screenshots/',
     storeScreenshots: true,
     reportSuiteAsScenarios: true,
     launchReport: true,
+    scenarioTimestamp: true,
     metadata: {
         "App Version":"1.1.1",
         "Test Environment": "QA",

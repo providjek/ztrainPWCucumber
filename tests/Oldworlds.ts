@@ -25,8 +25,6 @@ After(async function (this: World, scenario: ITestCaseHookParameter) {
     if (scenario.result?.status !== Status.PASSED) {
         await takeScreenShotOnFailure(this, scenario);
     }
-  
-    setDefaultTimeout(20_000);
     await browser.close();
 });
 
