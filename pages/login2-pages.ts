@@ -46,7 +46,7 @@ class LoginPage {
   }
   */
  async haveEmailProfilPlaceholder(email: string){
-  await expect(page.locator('#style_avatar_wrapper__pEGIQ', {timeout: 10000})).toContainText(email);
+  await expect(page.locator('#style_avatar_wrapper__pEGIQ')).toContainText(email);
 
  }
 
