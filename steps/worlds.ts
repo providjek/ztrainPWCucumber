@@ -10,7 +10,7 @@ setDefaultTimeout(60_000);
 
 Before(async function () {
     try {
-        browser = await chromium.launch({ headless: false });
+        browser = await chromium.launch({ headless: true });
         const context = await browser.newContext();
         page = await context.newPage();
         await page.goto(URL, { timeout: 60000, waitUntil: 'load' });
