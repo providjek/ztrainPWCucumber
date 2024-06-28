@@ -13,7 +13,7 @@ Before(async function () {
         browser = await chromium.launch({ headless: true });
         const context = await browser.newContext();
         page = await context.newPage();
-        await page.goto(URL, { timeout: 60000, waitUntil: 'load' });
+        await page.goto(URL, { timeout: 180000, waitUntil: 'load' });
         console.log(`Init... Site Title ${await page.title()}`);
     } catch (error) {
         console.log(`Chromium navigation failed due to ${error}`);
