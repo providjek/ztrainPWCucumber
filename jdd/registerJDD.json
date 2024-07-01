@@ -1,8 +1,8 @@
 {
     "validAccount": {
-      "email": "provi-test61@yopmail.com",
+      "email": "provi-tes61@yopmail.com",
       "password": "P@ss1234",
-      "address": "provi-test61@yopmail.com"
+      "address": "provi-tes61@yopmail.com"
     },
     "invalidAccounts": [
       {
