@@ -3,6 +3,7 @@ let options = [
     '--require ./steps/*.steps.ts',
     '--format progress',
     '--format json:./Reports/cucumber_report.json',
+    '--format ./reporter.js'
 ].join(' ');
 
 let run_features = [

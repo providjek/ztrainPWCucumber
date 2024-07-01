@@ -57,7 +57,7 @@ class RegisterPage {
     await this.fillConfPassword(confPass);
     await this.clickOnRegisterBtn();
   }
-
+ 
   async checkRegister(email: string){
     await expect(this.profilPlaceholder).toContainText(email);
   }
