@@ -1,4 +1,4 @@
-import { Given, When, Then, setDefaultTimeout } from "@cucumber/cucumber";
+import { Given, When, Then, setDefaultTimeout, ITestCaseHookParameter, Status } from "@cucumber/cucumber";
 import {expect, test} from "@playwright/test";
 import {page} from "./worlds";
 import LoginPage from "../pages/login2-pages";
@@ -8,6 +8,7 @@ import ProfilePage from "../pages/profile-pages";
 
 
 let profilePage: ProfilePage;
+let scenario: ITestCaseHookParameter;
 
     
   Given('I am on the (string) page', async function (pageName: string) {
@@ -34,5 +35,6 @@ let profilePage: ProfilePage;
     });
 
     Then('I can see the message {string} confirming the password update', async function (msg) {
-      await expect(profilePage.alerteUpdatePass).toContainText(msg);
+      await expect(profilePage.alerteUpdatePass,  "Les informations n'ont pas été modifiées, un problème est survvenu ! ").toContainText(msg);
+    
     });

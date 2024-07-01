@@ -10,3 +10,4 @@ Feature: Logout
     Given I'm connected
     When I log out
     Then I am logged out and redirected to the home page
+ 

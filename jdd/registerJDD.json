@@ -1,0 +1,33 @@
+{
+    "validAccount": {
+      "email": "provi-test31@yopmail.com",
+      "password": "P@ss1234",
+      "address": "provi-test31@yopmail.com"
+    },
+    "invalidAccounts": [
+      {
+        "email": "providjek.com",
+        "password": "P@ss1234",
+        "confPass": "P@ss1234",
+        "message": "Le format de l'email est invalid"
+      },
+      {
+        "email": "providjek@gmail.com",
+        "password": "pass",
+        "confPass": "pass",
+        "message": "Le mot de passe doit avoir au moins 8 caractères"
+      },
+      {
+        "email": "providjek@gmail.com",
+        "password": "P@ss1234",
+        "confPass": "Pass1234",
+        "message": "Les deux mots de passe ne sont pas identiquesSs"
+      }
+    ],
+    "existingAccount": {
+      "email": "provi-test31@yopmail.com",
+      "password": "P@ss1234",
+      "message": "Cet utilisateur existe déjà"
+    }
+  }
+  
