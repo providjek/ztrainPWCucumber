@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Jul 15 11:37:31 WAT 2024","Mon Jul 15 11:38:13 WAT 2024","42674","","Login - passing","","","","Login - passing","As a user I want to be able to log in with my valid credentials In order to purchase items"

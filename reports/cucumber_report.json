@@ -1,60 +1,59 @@
 [
   {
-    "description": "  As a user, I want to be able to create an account, in order to be able to buy items on the platform.",
+    "description": "  As a user I want to be able to log in with my valid credentials In order to purchase items",
     "elements": [
       {
         "description": "",
-        "id": "account-creation;account-creation---case-study",
+        "id": "login;login---passing",
         "keyword": "Scenario",
         "line": 8,
-        "name": "Account creation - Case study",
+        "name": "Login - passing",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 33420382499
+              "duration": 19189239299
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
             "line": 5,
-            "name": "I am on the registration section",
+            "name": "I am on the login section",
             "match": {
-              "location": "steps\\register.steps.ts:12"
+              "location": "steps\\login2.steps.ts:11"
             },
             "result": {
               "status": "passed",
-              "duration": 648240700
+              "duration": 368749399
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 9,
-            "name": "I fill in my account details from valid Account",
+            "name": "I log with my \"providjek@gmail.com\" and \"pass1234\"",
             "match": {
-              "location": "steps\\register.steps.ts:17"
+              "location": "steps\\login2.steps.ts:16"
             },
             "result": {
               "status": "passed",
-              "duration": 157885099
+              "duration": 470609099
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 10,
-            "name": "I am registered and logged in with my address",
+            "name": "I am logged with \"providjek@gmail.com\" in and redirected to the home page",
             "match": {
-              "location": "steps\\register.steps.ts:47"
+              "location": "steps\\login2.steps.ts:21"
             },
             "result": {
-              "status": "failed",
-              "duration": 5029005099,
-              "error_message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator('#style_avatar_wrapper__pEGIQ')\nExpected string: \u001b[32m\"provi-test31@yopmail.com\"\u001b[39m\nReceived string: \u001b[31m\"\"\u001b[39m\nCall log:\n  \u001b[2m- locator._expect with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#style_avatar_wrapper__pEGIQ')\u001b[22m\n\u001b[2m  -   locator resolved to <div id=\"style_avatar_wrapper__pEGIQ\">…</div>\u001b[22m\n\u001b[2m  -   unexpected value \"\"\u001b[22m\n\u001b[2m  -   locator resolved to <div id=\"style_avatar_wrapper__pEGIQ\">…</div>\u001b[22m\n\u001b[2m  -   unexpected value \"\"\u001b[22m\n\u001b[2m  -   locator resolved to <div id=\"style_avatar_wrapper__pEGIQ\">…</div>\u001b[22m\n\u001b[2m  -   unexpected value \"\"\u001b[22m\n\u001b[2m  -   locator resolved to <div id=\"style_avatar_wrapper__pEGIQ\">…</div>\u001b[22m\n\u001b[2m  -   unexpected value \"\"\u001b[22m\n\u001b[2m  -   locator resolved to <div id=\"style_avatar_wrapper__pEGIQ\">…</div>\u001b[22m\n\u001b[2m  -   unexpected value \"\"\u001b[22m\n\u001b[2m  -   locator resolved to <div id=\"style_avatar_wrapper__pEGIQ\">…</div>\u001b[22m\n\u001b[2m  -   unexpected value \"\"\u001b[22m\n\u001b[2m  -   locator resolved to <div id=\"style_avatar_wrapper__pEGIQ\">…</div>\u001b[22m\n\u001b[2m  -   unexpected value \"\"\u001b[22m\n\u001b[2m  -   locator resolved to <div id=\"style_avatar_wrapper__pEGIQ\">…</div>\u001b[22m\n\u001b[2m  -   unexpected value \"\"\u001b[22m\n\u001b[2m  -   locator resolved to <div id=\"style_avatar_wrapper__pEGIQ\">…</div>\u001b[22m\n\u001b[2m  -   unexpected value \"\"\u001b[22m\n\n    at Proxy.<anonymous> (C:\\Users\\LENOVO\\Documents\\Ztrain-Autom-Playwrigt\\v2\\projetPlawright-Cucumber\\node_modules\\playwright\\lib\\matchers\\expect.js:174:37)\n    at RegisterPage.checkRegister (C:\\Users\\LENOVO\\Documents\\Ztrain-Autom-Playwrigt\\v2\\projetPlawright-Cucumber\\pages\\register-pages.ts:62:42)\n    at AllureCucumberWorld.<anonymous> (C:\\Users\\LENOVO\\Documents\\Ztrain-Autom-Playwrigt\\v2\\projetPlawright-Cucumber\\steps\\register.steps.ts:49:23)"
+              "status": "passed",
+              "duration": 10019596000
             }
           },
           {
@@ -62,33 +61,33 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 267241699
+              "duration": 318012699
             }
           }
         ],
         "tags": [
           {
-            "name": "@registerAll",
+            "name": "@loginFe",
             "line": 1
           },
           {
-            "name": "@registerPassing",
+            "name": "@login",
             "line": 7
           }
         ],
         "type": "scenario"
       }
     ],
-    "id": "account-creation",
+    "id": "login",
     "line": 2,
     "keyword": "Feature",
-    "name": "Account creation",
+    "name": "Login",
     "tags": [
       {
-        "name": "@registerAll",
+        "name": "@loginFe",
         "line": 1
       }
     ],
-    "uri": "features\\register.feature"
+    "uri": "features\\login.feature"
   }
 ]

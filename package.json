@@ -12,8 +12,8 @@
     "test:e2e:non-smoke": "npx playwright test tests-examples/ --grep-invert @smoke --project=firefox",
     "test:visual:acme": "npx playwright test example-applitools.spec.ts --project=chromium",
     "test:visual:playwright": "npx playwright test example3.spec.ts --project=all-browsers-and-tests",
-    "test": "npx cucumber-js -p test_runner --tags @profile & node ./htmlReportGenerator.js",
-    "test:allure": "cucumber-js -p test_runner --tags @registerPassing & allure generate ./allure-results --clean -o ./allure-report",
+    "test": "npx cucumber-js -p test_runner --tags @login & node ./htmlReportGenerator.js",
+    "test:allure": "cucumber-js -p test_runner --tags @login & allure generate ./allure-results --clean -o ./allure-report",
     "allure:open": "allure open ./allure-report"
   },
   "keywords": [],

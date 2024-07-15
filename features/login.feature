@@ -9,6 +9,7 @@ Feature: Login
     When I log with my "providjek@gmail.com" and "pass1234"
     Then I am logged with "providjek@gmail.com" in and redirected to the home page
 
+  @loginNot
   Scenario Outline:
     When I log with my <email> and <password>
     Then The connection fails and I receive the message <message>
